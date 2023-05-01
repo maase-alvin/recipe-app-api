@@ -8,9 +8,10 @@ from psycopg2 import OperationalError as Psycopg2OpError
 from django.db.utils import OperationalError
 from django.core.management.base import BaseCommand
 
+
 class Command(BaseCommand):
     """Django command to wait for db to be avilable"""
-
+    
     def handle(self, *args, **options):
         """Entry point for command"""
         self.stdout.write('Waiting for database...')
