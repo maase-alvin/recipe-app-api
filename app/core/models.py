@@ -15,7 +15,7 @@ AbstractBaseUser,
 def recipe_image_file_path(instance, filename):
     """Generate file path for new recipe image"""
     ext = os.path.splitext(filename)[1] # get extension
-    filename = f'{uuid.uuid4()}.{ext}' # generate filename
+    filename = f'{uuid.uuid4()}{ext}' # generate filename
     return os.path.join('uploads', 'recipe', filename) # return path
 
 class UserManager(BaseUserManager):
